@@ -1,0 +1,31 @@
+// variables primary
+$intro-and-email-sign-up-background: hsl(217, 28%, 15%);
+$main-background: hsl(218, 28%, 13%);
+$footer-background: hsl(216, 53%, 9%);
+$testimonials-background: hsl(219, 30%, 18%);
+// variables accent
+$inside-call-to-action-gradient: hsl(176, 68%, 64%);
+$inside-call-to-action-gradient2: hsl(198, 60%, 50%);
+$error: hsl(0, 100%, 63%);
+// variables neutral
+$white: hsl(0, 0%, 100%);
+
+// extend
+
+// site
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	// font-family: 'Raleway', sans-serif;
+	font-size: 62.5%;
+	min-height: 100vh;
+	min-width: 375px;
+	// background: $intro-and-email-sign-up-background url('../images/bg-curvy-mobile.svg') no-repeat center;
+}
