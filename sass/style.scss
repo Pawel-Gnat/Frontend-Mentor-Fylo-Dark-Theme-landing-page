@@ -126,6 +126,7 @@ body {
 
 .product-info {
 	margin: 10em 2em;
+	text-align: center;
 
 	&__image {
 		display: block;
@@ -135,6 +136,8 @@ body {
 	}
 
 	&__container {
+		text-align: left;
+
 		&--heading {
 			font-size: 1.1rem;
 			margin-top: 2em;
@@ -160,3 +163,131 @@ body {
 		}
 	}
 }
+
+.testimonials {
+	position: relative;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+	// background: url("../images/bg-quotes.png") no-repeat;
+	// background-size: 10%;
+}
+
+.testimonial-card {
+	width: 285px;
+	height: 165px;
+	padding: 2em;
+	margin: 1em;
+	border-radius: 0.5em;
+	background-color: $testimonials-background;
+
+	&__text {
+		font-family: 'Raleway', sans-serif;
+		font-size: 0.7rem;
+		line-height: 1.5em;
+		margin-bottom: 2em;
+		opacity: 0.7;
+	}
+
+	&__profile {
+		display: flex;
+		align-items: center;
+
+		&--image {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+		}
+
+		&--author {
+			display: flex;
+			flex-direction: column;
+			gap: 0.2em;
+			margin-left: 1em;
+
+			p:first-of-type {
+				font-size: 0.6rem;
+				letter-spacing: 1px;
+				font-weight: 700;
+			}
+
+			p:last-of-type {
+				font-size: 0.6rem;
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+.testimonial-card:first-of-type::after {
+	content: '';
+	position: relative;
+	background: url('../images/bg-quotes.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: block;
+	height: 1.2rem;
+	width: 2rem;
+	top: -10rem;
+	left: -1rem;
+}
+
+.access {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	// align-items: center;
+	text-align: center;
+
+	height: 360px;
+	// max-width: 865px;
+
+	margin: 2em;
+	padding: 2.5em;
+	border-radius: 1em;
+	background-color: $intro-and-email-sign-up-background;
+	box-shadow: 0px 5px 25px -15px rgba(0, 0, 0, 1);
+
+	&__heading {
+		font-size: 1.3rem;
+	}
+
+	&__text {
+		font-family: 'Raleway', sans-serif;
+		font-size: 0.9rem;
+		line-height: 1.5em;
+		margin: 2em 0;
+		opacity: 0.8;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+
+		&--input {
+			border-radius: 5em;
+			border: none;
+			padding: 1.5em 2em;
+
+			&::placeholder {
+				opacity: 0.5;
+			}
+		}
+
+		&--button {
+			font-size: 0.9rem;
+			font-weight: 700;
+			text-transform: capitalize;
+			border-radius: 5em;
+			border: none;
+			padding: 1.2em 2em;
+			background: linear-gradient(90deg, $inside-call-to-action-gradient, $inside-call-to-action-gradient2);
+			color: $white;
+		}
+	}
+}
+
+//// STOPPED HERE, I NEED TO STYLE MY ERROR TEXT
+///
+///
