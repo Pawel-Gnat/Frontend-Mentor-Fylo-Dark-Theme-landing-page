@@ -28,13 +28,20 @@ body {
 	color: $white;
 }
 
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: $intro-and-email-sign-up-background;
+}
+
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	max-width: 1440px;
 	padding: 2em;
-	background-color: $intro-and-email-sign-up-background;
 
 	&__logo {
 		width: 100px;
@@ -49,6 +56,14 @@ body {
 			font-family: 'Raleway', sans-serif;
 			font-size: 1rem;
 			color: $white;
+			opacity: 0.8;
+			cursor: pointer;
+			transition: opacity 0.3s, text-decoration 0.3s;
+		}
+
+		a:hover {
+			opacity: 1;
+			text-decoration: underline;
 		}
 	}
 }
@@ -64,6 +79,7 @@ body {
 		img {
 			display: block;
 			height: auto;
+			margin: auto;
 			max-width: 100%;
 			object-fit: fill;
 		}
@@ -71,13 +87,16 @@ body {
 
 	&__heading {
 		font-size: 1.5rem;
-		margin: 1em 0;
+		max-width: 700px;
+		margin: 1em auto;
 	}
 
 	&__text {
 		font-size: 0.9rem;
 		line-height: 1.5em;
+		max-width: 700px;
 		padding: 0 1em;
+		margin: auto;
 		opacity: 0.7;
 	}
 
@@ -90,7 +109,13 @@ body {
 		border-radius: 2em;
 		background: linear-gradient(90deg, $inside-call-to-action-gradient, $inside-call-to-action-gradient2);
 		color: $white;
+		opacity: 0.8;
 		cursor: pointer;
+		transition: opacity 0.5s;
+	}
+
+	&__button:hover {
+		opacity: 1;
 	}
 }
 
@@ -99,7 +124,8 @@ body {
 	flex-flow: wrap;
 	justify-content: center;
 	text-align: center;
-	margin: 3em 2em;
+	max-width: 800px;
+	margin: 3em auto;
 
 	&__card {
 		width: 330px;
@@ -125,13 +151,15 @@ body {
 }
 
 .product-info {
-	margin: 10em 2em;
+	margin: 10em auto;
+	padding: 0 2em;
 	text-align: center;
 
 	&__image {
 		display: block;
 		height: auto;
 		max-width: 100%;
+		margin: auto;
 		object-fit: fill;
 	}
 
@@ -160,6 +188,16 @@ body {
 			padding-bottom: 5px;
 			border-bottom: 1px solid;
 			opacity: 0.7;
+			cursor: pointer;
+			transition: color 0.3s, filter 0.3s;
+		}
+
+		&--link:hover {
+			color: $white;
+
+			img {
+				filter: grayscale(100%);
+			}
 		}
 	}
 }
@@ -169,8 +207,6 @@ body {
 	display: flex;
 	flex-flow: wrap;
 	justify-content: center;
-	// background: url("../images/bg-quotes.png") no-repeat;
-	// background-size: 10%;
 }
 
 .testimonial-card {
@@ -233,16 +269,14 @@ body {
 }
 
 .access {
+	transform: translateY(50%);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	// align-items: center;
 	text-align: center;
-
-	height: 360px;
-	// max-width: 865px;
-
-	margin: 2em;
+	max-width: 860px;
+	margin: 0 2em;
+	// margin: 0 auto;
 	padding: 2.5em;
 	border-radius: 1em;
 	background-color: $intro-and-email-sign-up-background;
@@ -256,38 +290,179 @@ body {
 		font-family: 'Raleway', sans-serif;
 		font-size: 0.9rem;
 		line-height: 1.5em;
-		margin: 2em 0;
+		max-width: 640px;
+		margin: 2em auto;
 		opacity: 0.8;
 	}
 
 	&__form {
 		display: flex;
 		flex-direction: column;
-		gap: 2em;
+		justify-content: center;
+		gap: 0.5em;
 
 		&--input {
+			width: 100%;
+			height: 55px;
 			border-radius: 5em;
 			border: none;
-			padding: 1.5em 2em;
+			padding: 0 2em;
 
 			&::placeholder {
 				opacity: 0.5;
 			}
 		}
 
+		&--error {
+			font-weight: 700;
+			text-align: left;
+			padding: 0 2.5em;
+			color: $error;
+			visibility: hidden;
+		}
+
+		.active {
+			visibility: visible;
+		}
+
 		&--button {
 			font-size: 0.9rem;
 			font-weight: 700;
 			text-transform: capitalize;
+			height: 55px;
+			padding: 0 2em;
 			border-radius: 5em;
 			border: none;
-			padding: 1.2em 2em;
 			background: linear-gradient(90deg, $inside-call-to-action-gradient, $inside-call-to-action-gradient2);
 			color: $white;
+			opacity: 0.8;
+			cursor: pointer;
+			transition: opacity 0.5s;
+		}
+
+		&--button:hover {
+			opacity: 1;
 		}
 	}
 }
 
-//// STOPPED HERE, I NEED TO STYLE MY ERROR TEXT
-///
-///
+.footer {
+	padding: 20em 3em 0em;
+	background-color: $footer-background;
+	margin: auto;
+
+	&__logo {
+		width: 180px;
+		margin: 2em 2.5em;
+	}
+
+	&__location,
+	&__phone,
+	&__email {
+		margin: 1em 0;
+
+		&--image {
+			float: left;
+		}
+
+		&--text {
+			font-size: 1rem;
+			max-width: 340px;
+			margin-left: 2em;
+			opacity: 0.8;
+		}
+
+		&--number,
+		&--email {
+			font-size: 0.9rem;
+			margin-left: 1em;
+			color: $white;
+			opacity: 0.8;
+		}
+	}
+
+	&__links {
+		margin: 5em 0;
+
+		a {
+			display: inline-block;
+			font-size: 1rem;
+			margin: 0.5em 0;
+			color: $white;
+			opacity: 0.8;
+			transition: opacity 0.5s;
+		}
+
+		a:hover {
+			opacity: 1;
+		}
+
+		&--section {
+			margin-bottom: 3em;
+		}
+	}
+
+	&__media {
+		text-align: center;
+
+		i {
+			font-size: 0.9rem;
+			display: inline-flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			height: 30px;
+			margin: 0.5em;
+			border: 1px solid $white;
+			border-radius: 50%;
+			color: $white;
+			cursor: pointer;
+			transition: color 0.3s, border-color 0.3s;
+		}
+
+		i:hover {
+			color: $inside-call-to-action-gradient;
+			border-color: $inside-call-to-action-gradient;
+		}
+	}
+
+	&__author {
+		text-align: center;
+
+		a {
+			color: $error;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.product-info {
+		display: flex;
+		gap: 3em;
+
+		&__image {
+			max-width: 50%;
+		}
+	}
+
+	.access {
+		&__form {
+			flex-direction: row;
+			gap: 2em;
+
+			&--input {
+				width: 100%;
+				height: 55px;
+				border-radius: 5em;
+				border: none;
+				padding: 0 2em;
+			}
+
+			&--button {
+				height: 55px;
+				border-radius: 5em;
+			}
+		}
+	}
+}
